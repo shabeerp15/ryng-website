@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <script defer src="/__/firebase/10.4.0/firebase-app-compat.js"></script>
+      <!-- include only the Firebase features as you need -->
+      <script defer src="/__/firebase/10.4.0/firebase-auth-compat.js"></script>
+      <script defer src="/__/firebase/10.4.0/firebase-database-compat.js"></script>
+      <script defer src="/__/firebase/10.4.0/firebase-firestore-compat.js"></script>
+      <script defer src="/__/firebase/10.4.0/firebase-functions-compat.js"></script>
+      <script defer src="/__/firebase/10.4.0/firebase-messaging-compat.js"></script>
+      <script defer src="/__/firebase/10.4.0/firebase-storage-compat.js"></script>
+      <script defer src="/__/firebase/10.4.0/firebase-analytics-compat.js"></script>
+      <script defer src="/__/firebase/10.4.0/firebase-remote-config-compat.js"></script>
+      <script defer src="/__/firebase/10.4.0/firebase-performance-compat.js"></script>
+      <!-- 
+        initialize the SDK after all desired features are loaded, set useEmulator to false
+        to avoid connecting the SDK to running emulators.
+      -->
+      <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+      <script src="https://cdn.tailwindcss.com"></script>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
+
+      <style>
+         * {
+            font-family: "Merriweather", serif;
+         }
+      </style>
+
+      <style>
+         /* CSS animation */
+         @keyframes fadeIn {
+            0% {
+               opacity: 0;
+               transform: translateY(20px);
+            }
+            100% {
+               opacity: 1;
+               transform: translateY(0);
+            }
+         }
+
+         @keyframes scaleIn {
+            0% {
+               transform: scale(0.8);
+               opacity: 0;
+            }
+            100% {
+               transform: scale(1);
+               opacity: 1;
+            }
+         }
+
+         /* Apply animation to quote block */
+         .quote-animation {
+            animation: fadeIn 1s ease-in-out;
+         }
+
+         .banner-animation {
+            animation: scaleIn 1s ease-in-out;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="flex md:justify-center p-4">
+         <a href="/">
+            <img src="assets/Ryng_Logo_WithName.webp" alt="" />
+         </a>
+      </div>
+      <div class="sm:flex">
+         <div class="sm:w-[50%] p-0 sm:p-4 md:p-8">
+            <div class="p-2 md:p-5 quote-animation">
+               <h1 class="flex flex-col text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mt-0 md:mt-10 sm:mt-0">A modern dialer for the new era of sales</h1>
+               <p class="text-gray-500 text-sm md:text-md lg:text-xl font-light mt-2">The automated dialer for when every second counts. Power up to 200% more conversations.</p>
+            </div>
+
+            <form action="" class="space-y-3 text-gray-500 font-light p-2 sm:p-5 text-xs sm:text-sm md:text-lg lg:text-xl banner-animation">
+               <div class="flex flex-col">
+                  <label for="">Name</label>
+                  <input type="text" class="p-1 sm:p-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+               </div>
+               <div class="flex flex-col">
+                  <label for="">Email</label>
+                  <input type="text" class="p-1 sm:p-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+               </div>
+               <div class="flex flex-col">
+                  <label for="">Mobile Number</label>
+                  <input type="text" class="p-1 sm:p-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+               </div>
+               <div class="flex flex-col">
+                  <label for="">Company</label>
+                  <input type="text" class="p-1 sm:p-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+               </div>
+            </form>
+         </div>
+
+         <div class="sm:flex sm:w-[50%] relative banner-animation">
+            <img src="assets/banner1.webp" alt="" class="object-contain" />
+            <!-- <div class="sm:absolute sm:bottom-10 md:bottom-40 sm:left-10 sm:right-10 sm:flex sm:flex-col sm:max-w-[100%]">
+               <h1 class="text-xl md:text-2xl lg:text-4xl font-bold">Sign Up for a free 7 day Trial account of Ryng</h1>
+               <p>Get your personalized account and credentials to your inbox in a spec!</p>
+            </div> -->
+         </div>
+      </div>
+
+      <div class="sm:flex">
+         <div class="sm:flex sm:w-[50%] relative banner-animation">
+            <img src="assets/banner2.webp" alt="" class="object-contain" />
+         </div>
+         <div class="sm:w-[50%] p-0 sm:p-4 md:p-8 flex items-center justify-center">
+            <div class="p-10 lg:space-y-8 quote-animation">
+               <h1 class="flex flex-col text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mt-0 md:mt-10 sm:mt-0 lg:px-10">More conversions from powerful automation</h1>
+               <p class="text-gray-500 text-sm md:text-md lg:text-xl font-light mt-2 lg:px-10">
+                  Ryng automates repetitive tasks, allowing your sales team to focus on what they do best - closing deals. ​​The intuitive platform simplifies lead tracking and management, ensuring you're working at max
+                  efficiency.
+               </p>
+            </div>
+         </div>
+      </div>
+
+      <div class="sm:flex">
+         <div class="sm:w-[50%] p-0 sm:p-4 md:p-8 flex items-center justify-center">
+            <div class="p-10 lg:space-y-8 quote-animation">
+               <h1 class="flex flex-col text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mt-0 md:mt-10 sm:mt-0 lg:px-10">Everything you need to know, in one glance</h1>
+               <p class="text-gray-500 text-sm md:text-md lg:text-xl font-light mt-2 lg:px-10">
+                  Ryng combines intricately designed views with smart and intuitive tools, ensuring that everyone knows the full story at all times.
+               </p>
+            </div>
+         </div>
+         <div class="sm:flex sm:w-[50%] relative banner-animation">
+            <img src="assets/banner3.webp" alt="" class="object-contain" />
+         </div>
+      </div>
+
+      <div class="sm:flex">
+         <div class="sm:flex sm:w-[50%] relative banner-animation">
+            <img src="assets/banner4.webp" alt="" class="object-contain" />
+         </div>
+         <div class="sm:w-[50%] p-0 sm:p-4 md:p-8 flex items-center justify-center">
+            <div class="p-10 lg:space-y-8 quote-animation">
+               <h1 class="flex flex-col text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mt-0 md:mt-10 sm:mt-0 lg:px-10">
+                  Insights,<br />
+                  Analytics<br />
+                  & Productivity
+               </h1>
+               <p class="text-gray-500 text-sm md:text-md lg:text-xl font-light mt-2 lg:px-10">
+                  Our hand tailored dashboards, reports, and visualisations are built with the data-hungry analysts in mind, helping you rise above the noise and get a birds-eye view of ROI
+               </p>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-black">
+         <div class="max-w-screen-xl mx-auto p-10 rounded-lg mt-8">
+            <div class="space-x-2 flex justify-center mb-4 banner-animation">
+               <span class="text-yellow-400 text-2xl">&#9733;</span>
+               <span class="text-yellow-400 text-2xl">&#9733;</span>
+               <span class="text-yellow-400 text-2xl">&#9733;</span>
+               <span class="text-yellow-400 text-2xl">&#9733;</span>
+               <span class="text-gray-300 text-2xl">&#9733;</span>
+            </div>
+            <blockquote class="text-lg md:text-2xl lg:text-4xl italic text-white quote-animation">
+               "Ryng is very straightforward to use and helps effortless team monitoring. Reports are to the point, and I am saving hours on not having to gather data & creating pivots. I am glad we switched!"
+            </blockquote>
+            <p class="text-right text-white mt-4 quote-animation">- Guru Cams</p>
+         </div>
+      </div>
+
+      <div class="sm:flex">
+         <div class="sm:w-[50%] p-0 sm:p-4 md:p-8 flex items-center justify-center">
+            <div class="p-10 lg:space-y-8 quote-animation">
+               <h1 class="flex flex-col text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mt-0 md:mt-10 sm:mt-0 lg:px-10">Make the right call. Switch to Ryng.</h1>
+               <p class="text-gray-500 text-sm md:text-md lg:text-xl font-light mt-2 lg:px-10">Sign up here for quick access to a free trial account. We would love to help you get straight down to business.</p>
+            </div>
+         </div>
+         <div class="sm:flex sm:w-[50%] relative">
+            <div class="p-10 w-full">
+               <form action="" class="space-y-3 text-gray-500 font-light sm:p-5 text-xs sm:text-sm md:text-lg lg:text-xl banner-animation">
+                  <h1 class="text-xl md:text-2xl lg:text-4xl">Sign Up for Free!</h1>
+                  <div class="flex flex-col">
+                     <label for="" class="hidden md:block">Name</label>
+                     <input
+                        placeholder="Full Name"
+                        type="text"
+                        class="p-1 sm:p-2 border border-gray-300 placeholder-gray-400 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                     />
+                  </div>
+                  <div class="flex flex-col">
+                     <label for="" class="hidden md:block">Company Name</label>
+                     <input
+                        placeholder="Company Name"
+                        type="text"
+                        class="p-1 sm:p-2 border border-gray-300 placeholder-gray-400 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                     />
+                  </div>
+                  <div class="flex flex-col">
+                     <label for="" class="hidden md:block">Company Email</label>
+                     <input
+                        placeholder="Company Email"
+                        type="text"
+                        class="p-1 sm:p-2 border border-gray-300 placeholder-gray-400 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                     />
+                  </div>
+                  <div class="flex flex-col">
+                     <label for="" class="hidden md:block">Phone</label>
+                     <input
+                        placeholder="Phone Number"
+                        type="text"
+                        class="p-1 sm:p-2 border border-gray-300 placeholder-gray-400 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                     />
+                  </div>
+                  <div class="flex flex-col">
+                     <label for="" class="hidden md:block">Message</label>
+                     <textarea
+                        placeholder="Message"
+                        class="p-1 sm:p-2 border border-gray-300 placeholder-gray-400 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                     ></textarea>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+
+      <footer class="py-8 bg-gray-50">
+         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+               <p class="text-sm">&copy; 2023 by Codeofduty Innovations Pvt. Ltd.</p>
+            </div>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+               <a href="#" class="hover:rotate-[360deg] transform transition-transform duration-500 ease-in-out rounded-full hover:scale-110 p-0.5 bg-gray-200">
+                  <img src="assets/facebook.webp" alt="" />
+               </a>
+               <a href="#" class="hover:rotate-[360deg] transform transition-transform duration-500 ease-in-out rounded-full hover:scale-110 p-0.5 bg-gray-200">
+                  <img src="assets/twitter.webp" alt="" />
+               </a>
+               <a href="#" class="hover:rotate-[360deg] transform transition-transform duration-500 ease-in-out rounded-full hover:scale-110 p-0.5 bg-gray-200">
+                  <img src="assets/linkedin.webp" alt="" />
+               </a>
+               <a href="#" class="hover:rotate-[360deg] transform transition-transform duration-500 ease-in-out rounded-full hover:scale-110 p-0.5 bg-gray-200">
+                  <img src="assets/instagram.webp" alt="" />
+               </a>
+            </div>
+            <div class="mt-4 md:mt-0 flex flex-col text-gray-400 text-xs gap-2">
+               <a href="mailto:iinfo@ryng.in" class="hover:text-indigo-400">info@ryng.in</a>
+               <a href="tel:08047113601" class="hover:text-indigo-400">08047113601</a>
+            </div>
+         </div>
+      </footer>
+   </body>
+   <script>
+      let app = firebase.app();
+   </script>
+</html>
