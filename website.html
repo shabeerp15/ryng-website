@@ -33,6 +33,28 @@
                box-shadow: -200px 10px 10px 190px #f56565;
             }
          }
+         .container {
+            height: 75vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+         .image-container {
+            perspective: 1000px;
+            width: 100%;
+            height: 100%;
+            transition: perspective 0.1s;
+         }
+
+         #tilt-image {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            transition: transform 0.5s;
+            transform: rotateX(60deg);
+         }
       </style>
 
       <script>
@@ -73,7 +95,7 @@
       </script>
    </head>
    <body class="bg-red-50">
-      <nav class="bg-white sticky top-0">
+      <nav class="bg-white sticky top-0" style="z-index: 999;">
          <div class="max-w-screen-2xl mx-auto flex justify-between py-5 duration-500" id="navbar">
             <a class="logo" href="/">
                <img src="assets/Ryng_Logo_WithName.webp" alt="" class="w-20 md:w-36" />
@@ -91,7 +113,7 @@
          </div>
       </nav>
 
-      <main class="max-w-screen-2xl mx-auto flex flex-col justify-center">
+      <div class="max-w-screen-2xl mx-auto flex flex-col justify-center">
          <section class="banner px-10 lg:px-20">
             <!-- <div class="logo flex justify-center p-5 mt-10">
                <img src="assets/Ryng_Logo_WithName.webp" alt="" class="w-36" />
@@ -104,7 +126,15 @@
                <button class="bg-red-500 rounded-lg md:rounded-full p-2 px-4 text-white text-sm md:text-lg shadow-md">Get Started for Free</button>
             </div>
             <div class="banner-image flex justify-center delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400">
-               <img src="assets/banner3.webp" alt="" class="w-full" />
+               <div class="container">
+                  <div class="image-container">
+                     <img id="tilt-image" src="assets/banner3.webp" alt="" class="w-full" />
+                     <div id="thumbnail" class="cursor-pointer shadow w-full flex justify-center items-center h-[500px] rounded-2xl" style="display:none;position: absolute; top: 0%; left: 0%; height:100%;width: 100%;">
+                        <img src="assets/video-thumbnail.png" alt="Video Thumbnail" class="w-32 h-32 rounded-lg shadow-lg" style="position: absolute; top:50%; left: 50%; width: 25%; transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);"/>
+                     </div>
+                  </div>
+               </div>
             </div>
          </section>
 
@@ -125,9 +155,6 @@
                   </video>
                </div>
             </div>
-            <div id="thumbnail" class="cursor-pointer shadow w-full flex justify-center items-center h-[500px] rounded-2xl">
-               <img src="video-thumbnail.jpg" alt="Video Thumbnail" class="w-32 h-32 rounded-lg shadow-lg" />
-            </div>
          </div>
 
          <section class="px-10 lg:px-20 flex">
@@ -146,7 +173,7 @@
                <img src="assets/banner-website1.png" alt="" />
             </div>
          </section>
-      </main>
+      </div>
 
       <section class="bg-lightPink">
          <div class="max-w-screen-2xl mx-auto px-10 flex flex flex-col">
@@ -485,6 +512,22 @@
             navbar.classList.add("py-5");
             isSmall = false;
          }
+
+         const image = document.getElementById("tilt-image");
+         const container = document.querySelector(".image-container");
+         const scrollY = window.scrollY;
+         const maxTilt = 45;
+        
+         const tiltAngle = (scrollY / container.clientHeight) * maxTilt * 3;   
+         tiltAngleCal = Math.max(0, Math.min(maxTilt, tiltAngle));
+         image.style.transform = `rotateX(${45-tiltAngleCal}deg)`;
+
+         if(tiltAngleCal == 45)
+            document.getElementById("thumbnail").style.display= "block";      
+         else
+            document.getElementById("thumbnail").style.display= "none";
+         
+
       });
    </script>
 </html>
