@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden !important">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		<title>Ryng</title>
+		<!--     Fonts and icons     -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+
+		<!-- CSS Files -->
+		<link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+		<!-- CSS Just for demo purpose, don't include it in your project -->
+		<link href="../assets/demo/demo.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+		<style>
+			.status-badge {
+				margin: 2px 2px 2px 2px;
+				padding-right: 25px !important;
+				width: 150px;
+			}
+
+			.status-badge-inner {
+				text-align: center;
+				border-radius: 1.5rem;
+				line-height: 30px;
+				height: 30px;
+				display: inline-block;
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+
+			.status-badge-inner.idle {
+				max-width: 150px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.initiating-call {
+				color: black;
+				background-color: #00ff00;
+			}
+
+			.talking {
+				color: black;
+				background-color: #f7cd20;
+			}
+
+			.ringing-agent {
+				color: white;
+				background-color: purple;
+			}
+
+			.waiting-to-dial-in {
+				color: white;
+				background-color: purple;
+			}
+
+			.ringing-customer {
+				color: white;
+				background-color: violet;
+			}
+
+			.dialing {
+				color: white;
+				background-color: violet;
+			}
+
+			.on-wrap {
+				color: white;
+				background-color: #27ae60;
+			}
+
+			.on-wrap {
+				color: white;
+				background-color: #27ae60;
+			}
+
+			.idle {
+				color: white;
+				background-color: #4fc3f7;
+			}
+
+			.offline {
+				color: white;
+				background-color: #abadab;
+			}
+
+			.waiting {
+				color: white;
+				background-color: #6071b7;
+			}
+
+			.waiting-nfc {
+				color: white;
+				background-color: #e94728;
+			}
+
+			.card-title {
+				margin-left: 20px;
+				margin-top: 20px;
+				color: #6071b7 !important;
+			}
+
+			.page-title {
+				margin-top: 5px;
+			}
+		</style>
+	</head>
+
+	<body class="white-content" style="overflow: hidden">
+		<div class="sidebar-mini">
+			<div class="main-panel" style="overflow-y: hidden; border-top: 0px !important; scrollbar-width: 0px !important">
+				<nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+					<div class="container-fluid">
+						<div class="navbar-wrapper">
+							<a class="navbar-brand" href="javascript:void(0)" style="margin-left: 0px"><img src="../assets/Ryng_Logo_WithName.webp" id="logo-image" alt="Logo" onclick="startDemo()" /></a>
+						</div>
+						<div class="col-3">
+							<h4 class="page-title opensans-xl-bold">DEMO</h4>
+						</div>
+					</div>
+				</nav>
+
+				<div class="content" style="display: flex; justify-content: center">
+					<div style="display: flex; justify-content: center; align-items: center; height: 90vh; position: relative">
+						<img id="device" src="../assets/img/demo/laptop.png" style="cursor: pointer; width: 100%; height: 100%; object-fit: contain" />
+
+						<div style="display: flex; height: 100%; width: 100%; position: absolute; padding: 0% 10%">
+							<div style="display: flex; justify-content: center">
+								<div id="step1" style="display: flex; position: relative">
+									<img id="DS1" src="../assets/img/demo/DS1.png" style="cursor: pointer; width: 100%; object-fit: contain" />
+									<img id="DS1-guide" src="../assets/img/action-call.svg" style="position: absolute; top: 40%; left: 78%; cursor: pointer; height: 2.5vh" />
+								</div>
+
+								<div id="step2" style="display: none; position: relative">
+									<img id="DS2" src="../assets/img/demo/DS2.png" style="cursor: pointer; width: 100%; height: 100%; object-fit: contain" />
+									<div id="DS2-guide" style="position: absolute; top: 12%; left: 83%; cursor: pointer">
+										<span id="agent-sub-status-badge" class="ringing-agent" style="font-size: x-small">ringing-agent</span>
+									</div>
+								</div>
+
+								<div id="step3" style="display: none; position: relative">
+									<img id="DS3" src="../assets/img/demo/DS2.png" style="cursor: pointer; width: 100%; height: 100%; object-fit: contain" />
+									<div id="DS3-guide" style="position: absolute; top: 12%; left: 83%; cursor: pointer">
+										<span id="agent-sub-status-badge" class="ringing-customer" style="font-size: x-small">ringing-customer</span>
+									</div>
+								</div>
+
+								<div id="step4" src="../assets/img/demo/DS2.png" style="display: none; cursor: pointer; width: 100%; height: 100%; object-fit: contain">
+									<img id="DS4" src="../assets/img/demo/DS4.png" style="cursor: pointer; width: 100%; height: 100%; object-fit: contain" />
+									<div id="DS4-guide" class="scrollbox" style="position: absolute; top: 40%; left: 18%; cursor: pointer; height: 300px; max-width: fit-content">
+										<div class="scrollbox-content poppins-xs" style="padding: 0px; margin: 0px 10px 10px 4px">
+											<p class="opensans-lg-bold">Campaign Details:</p>
+											<p class="opensans-sm-bold">
+												NAME: <br />
+												<span id="campaign-name" class="opensans-lg">Campaign Health Insurance</span>
+											</p>
+
+											<br />
+											<p class="opensans-lg-bold">Lead/Customer Details:</p>
+											<div id="edit-cust-fields" class="m-0 mb-2" hidden="">
+												<button id="edit-cust-btn" class="btn btn-info">Edit Cust Fields</button>
+											</div>
+											<div id="save-or-cancel-cust-fields" hidden="" class="m-0 mb-2">
+												<button id="save-cust-btn" class="btn btn-info">Save Cust Fields</button>
+												<button id="cancel-cust-btn" class="btn btn-info">Cancel</button>
+											</div>
+
+											<a id="cust2_name" class="opensans-sm-bold">Types of Health Insurance plans</a>
+											<p id="cust2" class="opensans-lg">Short term Health Insurance</p>
+
+											<a id="cust3_name" class="opensans-sm-bold">client name 1</a>
+											<p id="cust3" class="opensans-lg">Jeevani</p>
+
+											<a id="cust4_name" class="opensans-sm-bold">policy detail owner2</a>
+											<p id="cust4" class="opensans-lg">HR</p>
+
+											<a id="cust5_name" class="opensans-sm-bold">policy type 3</a>
+											<p id="cust5" class="opensans-lg">health</p>
+
+											<a id="cust6_name" class="opensans-sm-bold">Biz type 4</a>
+											<p id="cust6" class="opensans-lg">EPO</p>
+
+											<a id="cust7_name" class="opensans-sm-bold">Brok Premium 5</a>
+											<p id="cust7" class="opensans-lg">2500</p>
+
+											<a id="cust8_name" class="opensans-sm-bold">Policy status 6</a>
+											<p id="cust8" class="opensans-lg">passed</p>
+
+											<a id="cust9_name" class="opensans-sm-bold">Gross Premium 7</a>
+											<p id="cust9" class="opensans-lg">300000</p>
+
+											<a id="cust10_name" class="opensans-sm-bold">Lead</a>
+											<p id="cust10" class="opensans-lg">Potential Customer</p>
+										</div>
+									</div>
+								</div>
+
+								<div id="step5" src="../assets/img/demo/DS2.png" style="display: none; cursor: pointer; width: 100%; height: 100%; object-fit: contain">
+									<img id="DS5" src="../assets/img/demo/DS5.png" style="cursor: pointer; width: 100%; height: 100%; object-fit: contain" />
+									<div id="DS5-guide" class="scrollbox" style="position: absolute; top: 21%; left: 42%; cursor: pointer; height: 300px; max-width: fit-content">
+										<div class="col-md-12 scrollbox-content poppins-xs" style="padding: 0 10px 0 0; margin: 0px 10px 10px 0px">
+											<p class="opensans-lg-bold">Dispose Call:</p>
+
+											<div class="form-group">
+												<div class="form-group">
+													<label for="callback" class="opensans-sm-bold"> SCHEDULE CALLBACK: </label><br />
+													<div class="col-12 mb-1">
+														<div class="row justify-content-center">
+															<span hidden="" id="blocked-time-text" class="col-md-4 col-6 p-0 opensans-sm-bold" style="color: #f22f4680"></span>
+															<span hidden="" id="blocked-time-slots" class="col-md-8 col-6 p-0 pl-1 opensans-sm" style="color: #f22f4680"></span>
+														</div>
+													</div>
+													<input
+														style="color: #333; border: 1px solid rgba(29, 37, 59, 0.5); border-radius: 10px"
+														class="opensans p-2 w-100 flatpickr-input"
+														type="text"
+														id="datepicker"
+														placeholder=""
+														readonly="readonly"
+													/><br />
+													<button class="btn btn-sm w-100 btn-warning">Clear Scheduled Date</button>
+												</div>
+
+												<p class="opensans-sm-bold">NOTES</p>
+												<textarea
+													class="col form-control opensans"
+													rows="4"
+													type="text"
+													id="notes"
+													style="border: 1px solid rgba(29, 37, 59, 0.5); border-radius: 7px"
+													placeholder="Use this space to capture any additional relevant notes concerning this lead/customer."
+												>
+												</textarea>
+											</div>
+
+											<div class="form-group">
+												<button id="custom-dnd-toggle" class="btn inactive">
+													<span style="float: left">
+														<input id="customer-dnd" type="checkbox" style="transform: scale(1.5); background: white" />
+													</span>
+													<span id="customer-dnd-text">Add to DND</span>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div id="step6" src="../assets/img/demo/DS2.png" style="display: none; cursor: pointer; width: 100%; height: 100%; object-fit: contain">
+								<img id="DS6" src="../assets/img/demo/DS6.png" style="cursor: pointer; width: 100%; height: 100%; object-fit: contain" />
+								<div id="DS6-guide" style="position: absolute; top: 15.5%; left: 84.4%; cursor: pointer; height: 450px; width: 80px; flex: 1">
+									<ul id="DS6-guide-innerDiv" class="nav nav-pills" style="align-content: center; justify-content: center">
+										<li class="nav-item" style="outline: 1px solid #b9b9b9; border-radius: 10px; margin: 7.5px; min-width: 50%; position: relative">
+											<a class="nav-link d-flex justify-content-center align-items-center p-0 m-0" href="#to-do-tab" data-toggle="tab" style="border-radius: 10px">
+												<img src="../assets/img/to-do.svg" alt="To Do List" tooltip="To Do List" style="width: 1.25rem" class="m-3" />
+											</a>
+										</li>
+										<li class="nav-item" style="outline: 1px solid #b9b9b9; border-radius: 10px; margin: 7.5px; min-width: 50%; position: relative">
+											<a class="nav-link d-flex justify-content-center align-items-center p-0 m-0" href="#sms-tab" data-toggle="tab" style="border-radius: 10px">
+												<img src="../assets/img/SMS-Messaging.png" alt="SMS" style="width: 1.25rem" class="m-3" />
+											</a>
+										</li>
+										<li class="nav-item" style="outline: 1px solid #b9b9b9; border-radius: 10px; margin: 7.5px; min-width: 50%; position: relative">
+											<a class="nav-link d-flex justify-content-center align-items-center p-0 m-0" href="#form-tab" id="form-tab-button" data-toggle="tab" style="border-radius: 10px">
+												<img src="../assets/img/google-forms.png" alt="Form" style="width: 1.25rem" class="m-3" />
+											</a>
+										</li>
+										<li class="nav-item" style="outline: 1px solid #b9b9b9; border-radius: 10px; margin: 7.5px; min-width: 50%">
+											<a class="nav-link d-flex justify-content-center align-items-center p-0 m-0" href="#eligible-campaign-tab" data-toggle="tab" style="border-radius: 10px">
+												<img src="../assets/img/eligible-campaign.svg" alt="Next Call" style="width: 1.25rem" class="m-3" />
+											</a>
+										</li>
+										<li class="nav-item" style="outline: 1px solid #b9b9b9; border-radius: 10px; margin: 7.5px; min-width: 50%">
+											<a class="nav-link d-flex justify-content-center align-items-center p-0 m-0" href="#next-call-tab" data-toggle="tab" style="border-radius: 10px">
+												<img src="../assets/img/next-call.svg" alt="Next Call" style="width: 1.25rem" class="m-3" />
+											</a>
+										</li>
+
+										<li class="nav-item" style="outline: 1px solid #b9b9b9; border-radius: 10px; margin: 7.5px; min-width: 50%">
+											<a class="nav-link d-flex justify-content-center align-items-center p-0 m-0 active" href="#whatsapp-tab" id="whatsapp-tab-link" data-toggle="tab" style="border-radius: 10px">
+												<img src="../assets/img/icons8-whatsapp-50.png" alt="WhatsApp" style="width: 1.25rem" class="m-3" />
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div id="step7" src="../assets/img/demo/DS2.png" style="display: none; cursor: pointer; width: 100%; height: 100%; object-fit: contain">
+								<img id="DS7" src="../assets/img/demo/DS7.png" style="cursor: pointer; width: 100%; height: 100%; object-fit: contain" />
+								<div id="DS7-guide" style="position: absolute; top: 85%; left: 20%; cursor: pointer; height: 50px; width: 65%">
+									<div id="DS7-guide-innerDiv" class="justify-content-center align-items-center h-100" style="display: flex">
+										<div class="p-1 m-0" style="flex: 33.65"></div>
+
+										<div class="p-1 m-0" style="position: relative; flex: 30.7">
+											<div id="disposition-drop" class="disposition-dropdown dropup">
+												<button
+													id="disposition-button"
+													type="button"
+													class="btn col-12"
+													style="color: black; background: transparent !important; padding: 0 5px; margin: 0; border: 1px solid rgba(29, 37, 59, 0.3); border-radius: 5px; height: 45px"
+													data-toggle="modal"
+													data-target="#dispositon-selector-modal"
+												>
+													<span id="disp-sel" class="opensans-bold" value="" style="display: inline; float: left; padding: 5px; overflow: hidden; text-overflow: ellipsis; width: 91%; text-align: left"
+														>DISPOSITION</span
+													>
+													<span> <i class="fas fa-caret-down" style="font-size: 14px; margin: 0.5rem 0"> </i></span>
+												</button>
+											</div>
+										</div>
+										<div class="p-1 m-0" style="flex: 35.65">
+											<div class="d-flex col-12 p-0 pr-1 pl-1">
+												<div id="disposition-section" class="col-12 p-0 d-flex">
+													<div class="dropup d-flex">
+														<button id="saveCall-button" type="button" value="17858" class="btn btn-fill btn-danger" data-toggle="dropdown" aria-expanded="false">Save &amp; Go Idle</button>
+														<div class="dropdown-menu" x-placement="top-start" style="position: absolute; transform: translate3d(0px, -173px, 0px); top: 0px; left: 0px; will-change: transform">
+															<h6 class="dropdown-item-text">
+																<p class="opensans-sm-bold m-0 p-0">Select Break Reason</p>
+															</h6>
+															<div class="scrollbox" style="max-height: 30vh">
+																<div class="col-md-12 scrollbox-content poppins-xs" style="padding: 0px; margin: 0px 10px 0px 4px">
+																	<div class="dropup-content">
+																		<a style="text-transform: capitalize" class="dropdown-item" id="42" href="#">)^&amp;*()_</a>
+																		<a style="text-transform: capitalize" class="dropdown-item" id="41" href="#">one min break</a>
+																		<a style="text-transform: capitalize" class="dropdown-item" id="40" href="#">tea break 10 min</a>
+																		<a style="text-transform: capitalize" class="dropdown-item" id="39" href="#">New Break 5 min</a>
+																		<a style="text-transform: capitalize" class="dropdown-item" id="38" href="#">lunch break 1 hr</a>
+																		<a style="text-transform: capitalize" class="dropdown-item" id="5" href="#">Tea break</a>
+																		<a style="text-transform: capitalize" class="dropdown-item" id="4" href="#">vacation </a>
+																		<a style="text-transform: capitalize" class="dropdown-item" id="3" href="#">Emergency </a>
+																		<a style="text-transform: capitalize" class="dropdown-item" id="2" href="#">Lunch break </a>
+																		<a style="text-transform: capitalize" class="dropdown-item" id="1" href="#">Tea break</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<button id="saveCallNext-button" value="17858" type="button" class="btn btn-fill d-flex">Save &amp; Auto-dial Next Call</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="DS7-guide-innerDiv1" class="justify-content-center align-items-center" style="display: none">
+										<div class="col-6">
+											<div id="disposition-drop" class="disposition-dropdown dropup">
+												<button
+													id="disposition-button"
+													type="button"
+													class="btn col-12"
+													style="color: black; background: transparent !important; padding: 0 5px; margin: 0; border: 1px solid rgba(29, 37, 59, 0.3); border-radius: 5px; height: 39px"
+													data-toggle="modal"
+													data-dismiss="modal"
+													data-target="#dispositon-selector-modal"
+												>
+													<span id="disp-sel" class="opensans-bold" value="" style="display: inline; float: left; padding: 5px; overflow: hidden; text-overflow: ellipsis; width: 91%; text-align: left"
+														>sub disposition noWIN</span
+													>
+													<span> <i class="fas fa-caret-down" style="font-size: 14px; margin: 0.5rem 0"> </i></span>
+												</button>
+											</div>
+										</div>
+										<div class="col-6 p-0">
+											<div id="disposition-section" class="text-center">
+												<div class="dropup d-flex">
+													<button id="saveCall-button" type="button" value="17858" class="btn btn-fill btn-danger" data-toggle="dropdown" aria-expanded="false">Save &amp; Go Idle</button>
+													<div class="dropdown-menu" x-placement="top-start" style="position: absolute; transform: translate3d(0px, -173px, 0px); top: 0px; left: 0px; will-change: transform">
+														<h6 class="dropdown-item-text">
+															<p class="opensans-sm-bold m-0 p-0">Select Break Reason</p>
+														</h6>
+														<div class="scrollbox" style="max-height: 30vh">
+															<div class="col-md-12 scrollbox-content poppins-xs" style="padding: 0px; margin: 0px 10px 0px 4px">
+																<div class="dropup-content">
+																	<a style="text-transform: capitalize" class="dropdown-item" id="42" href="#">)^&amp;*()_</a>
+																	<a style="text-transform: capitalize" class="dropdown-item" id="41" href="#">one min break</a>
+																	<a style="text-transform: capitalize" class="dropdown-item" id="40" href="#">tea break 10 min</a>
+																	<a style="text-transform: capitalize" class="dropdown-item" id="39" href="#">New Break 5 min</a>
+																	<a style="text-transform: capitalize" class="dropdown-item" id="38" href="#">lunch break 1 hr</a>
+																	<a style="text-transform: capitalize" class="dropdown-item" id="5" href="#">Tea break</a>
+																	<a style="text-transform: capitalize" class="dropdown-item" id="4" href="#">vacation </a>
+																	<a style="text-transform: capitalize" class="dropdown-item" id="3" href="#">Emergency </a>
+																	<a style="text-transform: capitalize" class="dropdown-item" id="2" href="#">Lunch break </a>
+																	<a style="text-transform: capitalize" class="dropdown-item" id="1" href="#">Tea break</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div id="step8" src="../assets/img/demo/DS8.png" style="display: none; cursor: pointer; width: 100%; height: 100%; object-fit: contain">
+								<img id="DS8" src="../assets/img/demo/DS8.png" style="cursor: pointer; width: 100%; object-fit: contain" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" />
+		<script src="https://unpkg.com/intro.js/intro.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/intro.js/introjs.css" />
+
+		<script>
+			function startDemo() {
+				const totalSteps = 8;
+				document.getElementById(`step1`).style.display = "flex";
+				for (let i = 2; i <= totalSteps; i++) {
+					document.getElementById(`step${i}`).style.display = "none";
+				}
+
+				let intro = introJs();
+
+				intro
+					.setOptions({
+						exitOnOverlayClick: false,
+						steps: [
+							{
+								title: "Let's take a tour of the Ryng Agent Portal",
+								intro: "You will now be able to see campaigns uploaded by the admin over here.👋",
+							},
+							{
+								intro: "Click the phone icon to begin a new call.",
+								element: document.querySelector("#DS1-guide"),
+							},
+							{
+								intro: "<div style ='display: flex; flex-wrap: wrap; justify-content: center;'>The agent's status changes, and his/her phone should begin ringing. <br><img id='agent-ringing' src='../assets/img/demo/agentRinging.gif'  style='width: 150px;' alt='agentRinging'></div>",
+								element: document.querySelector("#DS2-guide"),
+								position: "bottom",
+							},
+							{
+								intro: "<div style ='display: flex; flex-wrap: wrap; justify-content: center;'>The status badge will automatically change as the call progresses.<br><img id='customer-ringing' src='../assets/img/demo/customerRinging.gif' style='width: 150px;' alt='customerRinging'></div>",
+								element: document.querySelector("#DS3-guide"),
+								position: "bottom",
+							},
+							{
+								intro: "All of the customer data is available over here, within the context of the active campaign.",
+								element: document.querySelector("#DS4-guide"),
+							},
+							{
+								intro: "While you're talking, you can use this space to capture notes or even schedule the next call.",
+								element: document.querySelector("#DS5-guide"),
+							},
+							{
+								intro: "This panel houses the call tools, like customer history, to-do lists, forms, and the SMS and WhatsApp messengers.",
+								element: document.querySelector("#DS6-guide"),
+								position: "right",
+							},
+							{
+								intro: "Once the call has ended, you can dispose the call using the panel at the bottom.",
+								element: document.querySelector("#DS7-guide"),
+								position: "top",
+							},
+							{
+								title: "And that's a wrap! Now you can repeat this until world domination is achieved.",
+								intro: '<img src="  " onerror="this.onerror=null;this.src=\'https://i.giphy.com/ujUdrdpX7Ok5W.gif\';" alt="">',
+								position: "left",
+							},
+						],
+					})
+					.start();
+
+				intro.onchange(function (element) {
+					const currentStep = this._currentStep;
+
+					for (let i = 1; i <= totalSteps; i++) {
+						document.getElementById(`step${i}`).style.display = "none";
+					}
+
+					if (this._currentStep === 0) {
+						document.getElementById("step1").style.display = "flex";
+					} else {
+						document.getElementById(`step${this._currentStep}`).style.display = "flex";
+					}
+				});
+				introJs()
+					.onbeforeexit(function () {
+						return confirm("Are you sure?");
+					})
+					.start();
+			}
+
+			startDemo();
+		</script>
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+			}
+
+			.container {
+				width: 100%;
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+			}
+
+			#expandingImage {
+				width: auto;
+				height: 100%;
+				transform-origin: center;
+				transition: transform 0.5s ease-in-out;
+				cursor: pointer;
+			}
+
+			.scrollbox {
+				padding: 0px !important;
+				overflow-x: hidden;
+				overflow-y: scroll;
+				visibility: hidden;
+
+				background: linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+					radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)) 0 100%;
+				background: linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+					radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)) 0 100%;
+				background-repeat: no-repeat;
+				background-color: white;
+				background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+				background-attachment: local, local, scroll, scroll;
+			}
+
+			.scrollbox-content,
+			.scrollbox:hover,
+			.scrollbox:focus {
+				visibility: visible;
+			}
+
+			/* width */
+			.scrollbox::-webkit-scrollbar {
+				width: 5px;
+			}
+
+			/* Track */
+			.scrollbox::-webkit-scrollbar-track {
+				background: #efefef;
+			}
+
+			/* Handle */
+			.scrollbox::-webkit-scrollbar-thumb {
+				background: #ced0ce;
+				border-radius: 20px;
+			}
+
+			/* Handle on hover */
+			.scrollbox::-webkit-scrollbar-thumb:hover {
+				background: #ced0ce;
+			}
+
+			#agent-sub-status-badge {
+				padding: 5px 10px;
+				border-radius: 20px;
+
+				border: solid 1px rgb(33, 37, 41);
+				font-size: x-small;
+			}
+
+			.ringing-agent {
+				color: white;
+				background-color: purple;
+				height: 23px;
+				width: 70px;
+			}
+
+			#DS6-guide .nav-pills .nav-link.active {
+				color: #fff;
+				background-color: #fcddec;
+			}
+			#DS6-guide .nav-pills .nav-link {
+				color: #fff;
+				background-color: #fff;
+			}
+
+			@media (max-width: 1335px) {
+				#device {
+					content: url("../assets/img/demo/mobile.png");
+				}
+
+				#DS1 {
+					content: url("../assets/img/demo/MS1.png");
+				}
+
+				#DS1-guide {
+					top: 69% !important;
+					left: 35% !important;
+				}
+
+				#DS2,
+				#DS3 {
+					content: url("../assets/img/demo/MS2.png") !important;
+				}
+
+				#DS2-guide,
+				#DS3-guide {
+					top: 15% !important;
+					left: 55% !important;
+					width: 100px !important;
+				}
+
+				#DS4 {
+					content: url("../assets/img/demo/MS4.png") !important;
+				}
+
+				#DS4-guide {
+					top: 50% !important;
+					left: 13% !important;
+					height: 200px !important;
+				}
+
+				#DS5 {
+					content: url("../assets/img/demo/MS5.png") !important;
+				}
+
+				#DS5-guide {
+					top: 40% !important;
+					left: 15% !important;
+					height: 30vh !important;
+				}
+
+				#DS6 {
+					content: url("../assets/img/demo/MS6.png") !important;
+				}
+
+				#DS6-guide {
+					top: 32% !important;
+					left: 10% !important;
+					height: 50px !important;
+					width: 275px !important;
+				}
+				#DS6-guide-innerDiv {
+					display: none !important;
+				}
+
+				#DS6-guide-innerDiv1 {
+					display: block !important;
+				}
+
+				#DS7 {
+					content: url("../assets/img/demo/MS7.png") !important;
+				}
+
+				#DS7-guide-innerDiv {
+					display: none !important;
+				}
+
+				#DS7-guide-innerDiv1 {
+					display: flex !important;
+				}
+
+				#DS7-guide {
+					top: 83% !important;
+					left: 7% !important;
+					height: 50px !important;
+					width: 85% !important;
+				}
+
+				#DS8 {
+					content: url("../assets/img/demo/MS8.png") !important;
+				}
+
+				#jsd-widget {
+					display: none !important;
+				}
+
+				.introjs-tooltip-header {
+					padding: 10px !important;
+				}
+
+				.introjs-tooltiptext {
+					padding: 0 10px !important;
+				}
+
+				.introjs-bullets {
+					padding: 0 5px !important;
+				}
+
+				.introjs-tooltipbuttons {
+					padding: 5px !important;
+				}
+
+				#agent-ringing,
+				#customer-ringing {
+					width: 50% !important;
+				}
+			}
+		</style>
+	</body>
+</html>
