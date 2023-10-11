@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
+      <title>Omni channel Auto Dialer with WhatsApp | Ryng</title>
       <script src="https://cdn.tailwindcss.com"></script>
 
       <script>
@@ -26,6 +26,30 @@
          @media (max-width: 768px) {
             .bottom-curve {
                border-radius: 0 0 60% 60% / 0 0 1% 1%;
+            }
+         }
+
+         .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+         }
+
+         .text-bg-image {
+            background-image: url(https://wallpaperaccess.com/full/39632.jpg);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            color: #000000;
+            animation: animate-bg 30s ease-in-out infinite;
+         }
+
+         @keyframes animate-bg {
+            0% {
+               background-position: center center;
+            }
+            50% {
+               background-position: center top;
+            }
+            100% {
+               background-position: center center;
             }
          }
       </style>
@@ -59,11 +83,12 @@
          }
 
          #tilt-image {
-            height: 100%;
-            width: 100%;
-            max-width: 100%;
+            /* height: 100%; */
+            /* width: 100%; */
+            /* max-width: 100%; */
             transition: transform 0.5s;
             transform: rotateX(60deg);
+            /* object-fit: contain; */
          }
       </style>
 
@@ -78,6 +103,9 @@
                   backgroundImage: (theme) => {
                      return {
                         bg1: "url(assets/preview1.png)",
+                        bg2: "url(assets/bg2.png)",
+                        bg3: "url(assets/bg3.png)",
+                        bg4: "url(assets/bg4.png)",
                      };
                   },
                },
@@ -104,11 +132,11 @@
          };
       </script>
    </head>
-   <body class="">
-      <nav class="bg-white sticky top-0" style="z-index: 999">
-         <div class="max-w-screen-2xl mx-auto flex justify-between py-5 duration-500" id="navbar">
+   <body class="bg-bg2" style="background-repeat: no-repeat">
+      <nav class="sticky top-0 py-5 duration-500 text-white" style="z-index: 999" id="navbar">
+         <div class="max-w-screen-2xl mx-auto flex justify-between">
             <a class="logo" href="/">
-               <img src="assets/Ryng_Logo_WithName.webp" alt="" class="w-20 md:w-36" />
+               <img src="assets/logo2.svg" alt="" class="w-20 md:w-36" id="ryng-logo" />
             </a>
             <div class="flex justify-center items-center px-4">
                <ul class="flex lg:space-x-20 md:space-x-10 space-x-5 lg:mr-16 text:md md:text-lg font-medium">
@@ -117,35 +145,34 @@
                   <li><a href="#" class="hover:text-gray-600">Signup</a></li>
                </ul>
                <div class="mx-5 hidden md:flex">
-                  <button class="border-2 border-red-500 p-6 py-1 rounded-md text-2xl font-medium text-red-500">Get Started</button>
+                  <button class="shadow-md bg-black p-6 py-1 rounded-md text-2xl font-medium text-white border-rose-500" id="nav-get-started">Get Started</button>
                </div>
             </div>
          </div>
       </nav>
 
       <div class="max-w-screen-2xl mx-auto flex flex-col justify-center">
-         <section class="banner px-10 lg:px-20">
-            <!-- <div class="logo flex justify-center p-5 mt-10">
-               <img src="assets/Ryng_Logo_WithName.webp" alt="" class="w-36" />
-            </div> -->
-            <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold text-center md:p-5">The Best Next-Gen Customer Communications Platform. Period.</h1>
+         <section class="banner px-10 lg:px-20 text-white">
+            <div class="">
+               <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold text-center md:p-5 text-shadow">The Best Next-Gen Customer Communications Platform. Period.</h1>
+            </div>
             <p class="text-center w-50 font-normal text:md lg:text-xl leading-6 lg:leading-8 md:mx-36">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi.
             </p>
             <div class="flex justify-center mt-4">
-               <button class="bg-red-500 rounded-lg md:rounded-full p-2 px-4 text-white text-sm md:text-lg shadow-md">Get Started for Free</button>
+               <button class="bg-red-500 rounded-md md:rounded-lg p-2 px-4 bg-white text-rose-500 text-sm md:text-xl shadow-lg">Get Started for Free</button>
             </div>
             <div class="banner-image flex justify-center delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400">
                <div class="container">
-                  <div class="image-container">
-                     <img id="tilt-image" src="assets/banner3.webp" alt="" class="w-full" />
+                  <div class="image-container flex justify-center">
+                     <img id="tilt-image" src="assets/banner3.webp" class="lg:w-full" alt="" />
                      <div
                         id="thumbnail"
-                        class="cursor-pointer shadow w-full flex justify-center items-center h-[500px] rounded-2xl"
+                        class="cursor-pointer shadow w-full flex justify-center items-center h-[500px] rounded-2xl bg-bluwe-200"
                         style="display: none; position: absolute; top: 0%; left: 0%; height: 100%; width: 100%"
                      >
                         <img
-                           src="assets/video-thumbnail.png"
+                           src="assets/play-btn.svg"
                            alt="Video Thumbnail"
                            class="w-32 h-32 rounded-lg shadow-lg"
                            style="position: absolute; top: 50%; left: 50%; width: 25%; transform: translate(-50%, -50%); transform: translate(-50%, -50%)"
@@ -155,13 +182,6 @@
                </div>
             </div>
          </section>
-
-         <!-- <section class="demo">
-            <video width="320" height="240" controls>
-               <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-               Your browser does not support the video tag.
-            </video>
-         </section> -->
 
          <div class="w-full h-full flex justify-center items-center px-10">
             <div id="videoModal" class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 flex justify-center items-center z-50">
@@ -174,82 +194,37 @@
                </div>
             </div>
          </div>
-
-         <section class="px-10 lg:px-20 flex">
-            <div class="sm:w-[50%] flex flex-col justify-center md:p-10 lg:p-16">
-               <h1 class="text-xl md:text-2xl lg:text-5xl font-semibold mt-0 md:mt-10 sm:mt-0 leading-tight">
-                  Take Ryng out for a <br />
-                  <span class="text-red-500"> Test Drive </span>
-               </h1>
-               <!-- <h1 class="text-red-500 text-xl md:text-2xl lg:text-5xl font-medium bg-green-500 p-0">Test Drive</h1> -->
-               <p class="text-gray-600 text-md lg:text-xl font-normal mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec massa quis lacus hendrerit scelerisque.</p>
-               <div class="mt-4">
-                  <button class="rounded-lg p-2 px-8 bg-red-500 text-xl shadow-md border font-medium text-white">Start Tour</button>
-               </div>
-            </div>
-            <div class="sm:w-[50%] p-0 sm:p-4 md:p-8">
-               <img src="assets/banner-website1.png" alt="" />
-            </div>
-         </section>
       </div>
 
-      <section class="bg-lightPink">
-         <div class="max-w-screen-2xl mx-auto px-10 flex flex flex-col">
+      <section class="bg-bg3">
+         <div class="max-w-screen-2xl mx-auto px-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 text-center text-white py-10 gap-2 md:gap-5 lg:gap-10">
             <div class="">
-               <h1 class="text-2xl md:text-4xl lg:text-4xl font-bold mt-0">The Why<span class="text-red-500">.</span></h1>
+               <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold mt-0">80%+</h1>
+               <p class="text-md lg:text-xl font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ad sint,</p>
             </div>
-            <div class="mt-10 flex flex-col justify-center items-center">
-               <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold mt-0">Lorem ipsum <span class="text-red-500">dolor</span> sit ame...</h1>
-               <p class="text-gray-600 text-md lg:text-xl font-normal mt-2 lg:max-w-screen-lg p-3 text-center">
-                  Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt.
-               </p>
+            <div class="">
+               <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold mt-0">200+</h1>
+               <p class="text-md lg:text-xl font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ad sint,</p>
+            </div>
+            <div class="">
+               <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold mt-0">500%+</h1>
+               <p class="text-md lg:text-xl font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ad sint,</p>
             </div>
          </div>
-         <div class="grid grid-cols-2 max-w-screen-2xl mx-auto mt-12">
-            <div class="flex flex-col justify-center items-center border-black border-r-2">
-               <div class="">
-                  <h1 class="text-2xl md:text-4xl lg:text-4xl font-medium mt-0 p-2 text-center">Legacy Dialers</h1>
-                  <div class="p-0 flex justify-center items-center"><img src="assets/dinosor.png" alt="" class="w-72" /></div>
-                  <ul class="p-4 mt-0 space-y-2 text-lg">
-                     <li>Older & Ugly</li>
-                     <li>Big & Clunky</li>
-                     <li>Outdated</li>
-                     <li>Long Onboarding Cycles</li>
-                     <li>Slow & Tired</li>
-                  </ul>
-               </div>
-            </div>
-
-            <div class="flex justify-center items-center">
-               <div class="">
-                  <div class="">
-                     <img src="assets/Ryng_Logo_WithName.webp" alt="" class="w-36" />
-                  </div>
-                  <div class="p-10 flex justify-center items-center">
-                     <img src="assets/horse.png" alt="" class="w-48" />
-                  </div>
-                  <ul class="p-4 mt-0 space-y-2 text-lg">
-                     <li>Older & Ugly</li>
-                     <li>Big & Clunky</li>
-                     <li>Outdated</li>
-                     <li>Long Onboarding Cycles</li>
-                     <li>Slow & Tired</li>
-                  </ul>
+         <div class="max-w-screen-2xl mx-auto px-10 text-center flex flex-col justify-center items-center lg:mt-10">
+            <h1 class="text-2xl md:text-4xl lg:text-5xl font-semibold mt-0 text-white">Hop in and let's take Ryng for a spin</h1>
+         </div>
+         <div class="max-w-screen-xl mx-auto relative flex justify-center items-center">
+            <img src="assets/banner3.webp" alt="" class="w-3/4 lg:w-full opacity-90" />
+            <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+               <div class="p-2 lg:p-10 px-2 lg:px-20 bg-white shadow-md rounded-xl drop-shadow-2xl">
+                  <button class="rounded-lg p-2 px-8 bg-red-500 text-xl shadow-md border font-medium text-white">Start Tour</button>
                </div>
             </div>
          </div>
       </section>
 
-      <section class="bg-bg1">
-         <div class="max-w-screen-2xl mx-auto px-10 flex flex flex-col">
-            <div class="mt-20 flex flex-col justify-center items-center">
-               <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold mt-0">When it starts to <span class="text-red-500">Ryng</span> instead of ring...</h1>
-               <p class="text-gray-600 text-md lg:text-xl font-normal mt-2 lg:max-w-screen-lg p-3 text-center">
-                  Experience the Ryng difference—a product designed to ignite agent performance, foster a sense of enjoyment, and drive productivity to new levels.
-               </p>
-            </div>
-         </div>
-
+      <section class="">
          <div class="md:flex max-w-screen-2xl mx-auto md:flex-row-reverse">
             <div class="md:w-[60%] delay-[300ms] duration-[600ms] taos:[transform:translate3d(200px,200px,0)] taos:opacity-0" data-taos-offset="300">
                <img src="assets/features1.png" alt="" />
@@ -311,25 +286,9 @@
          </div>
       </section>
 
-      <section class="bg-darkBlue text-white">
-         <div class="max-w-screen-2xl mx-auto px-10 flex flex flex-col">
-            <div class="mt-10">
-               <h1 class="text-2xl md:text-4xl lg:text-4xl font-bold mt-0">The How<span class="text-red-500">.</span></h1>
-            </div>
-            <div class="flex flex-col justify-center items-center">
-               <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold mt-0">Learn how <span class="text-red-500">Ryng</span> makes you better...</h1>
-               <p class="text-md lg:text-xl font-normal mt-2 lg:max-w-screen-lg p-3 text-center">Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt.</p>
-            </div>
-         </div>
-         <div class="max-w-screen-2xl mx-auto bg-white">test</div>
-         <div class="flex justify-center">
-            <button class="rounded-full p-2 px-6 bg-white text-lg shadow-md border font-semibold text-black my-4">Explore more blogs</button>
-         </div>
-      </section>
-
-      <section class="bg-red-300 h-[350px] w-full border">
-         <div class="max-w-screen-2xl mx-auto px-10 flex flex flex-col text-center text-white">
-            <h1 class="text-2xl md:text-4xl lg:text-5xl font-semibold mt-0 mt-8">What kind of industry are you from?</h1>
+      <section class="bg-bg4 h-[350px] w-full border">
+         <div class="max-w-screen-2xl mx-auto px-10 flex flex flex-col text-center text-white lg:my-16">
+            <h1 class="text-2xl md:text-4xl lg:text-5xl font-semibold">What kind of industry are you from?</h1>
             <p class="text-md lg:text-2xl font-light mt-2 tracking-widest mt-4">Lets see the ways in which Ryng could benefit you and your company</p>
             <div class="flex justify-center mt-12">
                <div class="relative text-black">
@@ -357,9 +316,6 @@
                   <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold mt-0">Unlock your <span class="text-red-500">perfect</span> plan, without breaking the bank</h1>
                   <p class="text-md lg:text-xl font-normal mt-2 lg:max-w-screen-lg p-3 text-center">Attractive packages, transparent pricing, no surprises...except for the affordability!</p>
                   <p class="text-red-500 text-md lg:text-xl font-normal mt-2 lg:max-w-screen-lg text-center">XYZ OFFER - 50% OFF ON LOREM IPSUM</p>
-                  <div class="flex justify-center">
-                     <button class="rounded-full p-2 px-6 bg-white text-lg shadow-md border font-semibold text-black my-4">INR</button>
-                  </div>
                </div>
             </div>
             <div class="max-w-screen-xl mx-auto lg:mt-8 xl:mb-10">
@@ -514,36 +470,36 @@
                   <div class="">
                      <div class="flex items-start space-x-4">
                         <img src="assets/question-mark.svg" alt="" class="mt-2" />
-                        <h1 class="text-lg lg:text-2xl font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit?</h1>
+                        <h1 class="text-md md:text-lg lg:text-2xl font-light md:font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit?</h1>
                      </div>
-                     <p class="text-gray-300 font-light text-sm mt-2 md:mt-4 border-l-4 border-[#FF0059] ml-3 pl-8">
+                     <p class="text-gray-300 font-light text-xs md:text-sm mt-2 md:mt-4 border-l-4 border-[#FF0059] ml-3 pl-8">
                         Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt.
                      </p>
                   </div>
                   <div class="">
                      <div class="flex items-start space-x-4">
                         <img src="assets/question-mark.svg" alt="" class="mt-2" />
-                        <h1 class="text-lg lg:text-2xl font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit?</h1>
+                        <h1 class="text-md md:text-lg lg:text-2xl font-light md:font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit?</h1>
                      </div>
-                     <p class="text-gray-300 font-light text-sm mt-2 md:mt-4 border-l-4 border-[#FF0059] ml-3 pl-8">
+                     <p class="text-gray-300 font-light text-xs md:text-sm mt-2 md:mt-4 border-l-4 border-[#FF0059] ml-3 pl-8">
                         Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt.
                      </p>
                   </div>
                   <div class="">
                      <div class="flex items-start space-x-4">
                         <img src="assets/question-mark.svg" alt="" class="mt-2" />
-                        <h1 class="text-lg lg:text-2xl font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit?</h1>
+                        <h1 class="text-md md:text-lg lg:text-2xl font-light md:font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit?</h1>
                      </div>
-                     <p class="text-gray-300 font-light text-sm mt-2 md:mt-4 border-l-4 border-[#FF0059] ml-3 pl-8">
+                     <p class="text-gray-300 font-light text-xs md:text-sm mt-2 md:mt-4 border-l-4 border-[#FF0059] ml-3 pl-8">
                         Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt.
                      </p>
                   </div>
                   <div class="">
                      <div class="flex items-start space-x-4">
                         <img src="assets/question-mark.svg" alt="" class="mt-2" />
-                        <h1 class="text-lg lg:text-2xl font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit?</h1>
+                        <h1 class="text-md md:text-lg lg:text-2xl font-light md:font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit?</h1>
                      </div>
-                     <p class="text-gray-300 font-light text-sm mt-2 md:mt-4 border-l-4 border-[#FF0059] ml-3 pl-8">
+                     <p class="text-gray-300 font-light text-xs md:text-sm mt-2 md:mt-4 border-l-4 border-[#FF0059] ml-3 pl-8">
                         Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt.
                      </p>
                   </div>
@@ -552,7 +508,55 @@
          </section>
       </section>
 
-      <div class="my-2"></div>
+      <footer class="my-2">
+         <div class="max-w-screen-2xl mx-auto py-5 grid grid-cols-1 md:grid-cols-3 p-4 md:p-4 lg:p-0  gap-4">
+            <div class="flex flex-col ">
+               <div class="">
+                  <img src="assets/Ryng_Logo_WithName.webp" alt="Ryng" class="w-20" />
+                  <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <div class="flex gap-2 mt-2">
+                     <a href="#" class=" transform transition-transform duration-500 ease-in-out rounded-full hover:scale-110 p-1 bg-gray-200">
+                        <img src="assets/facebook.webp" alt="" class="w-5"/>
+                     </a>
+                     <a href="#" class=" transform transition-transform duration-500 ease-in-out rounded-full hover:scale-110 p-1 bg-gray-200">
+                        <img src="assets/twitter.webp" alt="" class="w-5"/>
+                     </a>
+                     <a href="#" class=" transform transition-transform duration-500 ease-in-out rounded-full hover:scale-110 p-1 bg-gray-200">
+                        <img src="assets/linkedin.webp" alt="" class="w-5" />
+                     </a>
+                     <a href="#" class=" transform transition-transform duration-500 ease-in-out rounded-full hover:scale-110 p-1 bg-gray-200">
+                        <img src="assets/instagram.webp" alt="" class="w-5" />
+                     </a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="flex flex-col md:items-center  ">
+               <div >
+                  <h1 class="text-md font-bold">Pages</h1>
+                  <div class="flex flex-col gap-4 mt-2 text-gray-400 text-sm">
+                     <a href="#" class="hover:text-gray-500">Home</a>
+                     <a href="#" class="hover:text-gray-500">Blog</a>
+                     <a href="#" class="hover:text-gray-500">Sign Up</a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="flex flex-col md:items-center">
+               <div>
+                  <h1 class="text-md font-bold">Contact</h1>
+                  <div class="mt-2 text-gray-400 text-sm">
+                     <ul class="flex flex-col gap-4">
+                        <li>Email: <a href="mailto:info@ryng.in">info@ryng.in</a></li>
+                        <li>Tel: <a href="tel:08047113601">08047113601</a></li>
+                     </div>
+                  </div>
+               </div>
+            <div class="">
+               <p class="text-gray-400 text-xs mt-4">© 2023 by Codeofduty Innovations Pvt. Ltd.</p>
+            </div>
+         </div>
+      </footer>
       <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
    </body>
 
@@ -616,16 +620,33 @@
 
    <script>
       const navbar = document.getElementById("navbar");
+      const logo = document.getElementById("ryng-logo");
+      const getStartedBtn = document.getElementById("nav-get-started");
       let isSmall = false;
 
       window.addEventListener("scroll", () => {
-         if (window.scrollY > 100) {
+         if (window.scrollY > 50) {
             navbar.classList.remove("py-5");
             navbar.classList.add("py-1");
+            navbar.classList.add("bg-white");
+            navbar.classList.add("shadow-md");
+            getStartedBtn.classList.remove("text-white");
+            getStartedBtn.classList.add("text-rose-500");
+            getStartedBtn.classList.remove("bg-black");
+            getStartedBtn.classList.add("border-2");
+            navbar.classList.remove("text-white");
+            logo.src = "assets/Ryng_Logo_WithName.webp";
             isSmall = true;
-         } else if (window.scrollY <= 100 && isSmall) {
+         } else if (window.scrollY < 10 && isSmall) {
             navbar.classList.remove("py-1");
             navbar.classList.add("py-5");
+            navbar.classList.remove("shadow-md");
+            navbar.classList.remove("bg-white");
+            navbar.classList.add("text-white");
+            getStartedBtn.classList.add("bg-black");
+            getStartedBtn.classList.remove("text-rose-500");
+            getStartedBtn.classList.remove("border-2");
+            logo.src = "assets/logo2.svg";
             isSmall = false;
          }
 
