@@ -6,22 +6,22 @@
       <title>Omni channel Auto Dialer with WhatsApp | Ryng</title>
       <script src="https://cdn.tailwindcss.com"></script>
 
-      <script>
-         document.documentElement.classList.add("js");
-      </script>
+		<script>
+			document.documentElement.classList.add("js");
+		</script>
 
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-      <style>
-         * {
-            font-family: "Inter", sans-serif;
-         }
+		<style>
+			* {
+				font-family: "Inter", sans-serif;
+			}
 
-         .bottom-curve {
-            border-radius: 0 0 60% 60% / 0 0 10% 10%;
-         }
+			.bottom-curve {
+				border-radius: 0 0 60% 60% / 0 0 10% 10%;
+			}
 
          @media (max-width: 768px) {
             .bottom-curve {
@@ -54,33 +54,33 @@
          }
       </style>
 
-      <style>
-         @media screen and (-webkit-min-device-pixel-ratio: 0) {
-            input[type="range"]::-webkit-slider-thumb {
-               width: 15px;
-               -webkit-appearance: none;
-               appearance: none;
-               height: 15px;
-               cursor: ew-resize;
-               background: #fff;
-               border-radius: 50%;
-               box-shadow: -200px 10px 10px 190px #f56565;
-            }
-         }
-         .container {
-            height: 75vh;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-         }
+		<style>
+			@media screen and (-webkit-min-device-pixel-ratio: 0) {
+				input[type="range"]::-webkit-slider-thumb {
+					width: 15px;
+					-webkit-appearance: none;
+					appearance: none;
+					height: 15px;
+					cursor: ew-resize;
+					background: #fff;
+					border-radius: 50%;
+					box-shadow: -200px 10px 10px 190px #f56565;
+				}
+			}
+			.container {
+				height: 75vh;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 
-         .image-container {
-            perspective: 1000px;
-            width: 100%;
-            height: 100%;
-            transition: perspective 0.1s;
-         }
+			.image-container {
+				perspective: 1000px;
+				width: 100%;
+				height: 100%;
+				transition: perspective 0.1s;
+			}
 
          #tilt-image {
             /* height: 100%; */
@@ -224,67 +224,78 @@
          </div>
       </section>
 
-      <section class="">
-         <div class="md:flex max-w-screen-2xl mx-auto md:flex-row-reverse">
-            <div class="md:w-[60%] delay-[300ms] duration-[600ms] taos:[transform:translate3d(200px,200px,0)] taos:opacity-0" data-taos-offset="300">
-               <img src="assets/features1.png" alt="" />
-            </div>
-            <div class="md:w-[40%] flex flex-col justify-center items-center delay-[300ms] duration-[600ms] taos:[transform:translate3d(-200px,200px,0)] taos:opacity-0" data-taos-offset="300">
-               <div class="border-red-500 border-l-4 pr-20 lg:pl-8">
-                  <h1 class="text-2xl md:text-4xl lg:text-4xl font-bold ml-4 mb-4">Take Off <span class="text-red-500">Faster</span></h1>
-                  <p class="text-md lg:text-r-2xl ml-4 mt-2 lg:max-w-screen-lg">
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt. Nunc auctor, mauris at
-                     gravida vestibulum, elit nunc laoreet odio, sit amet sagittis dolor eros a neque.
-                  </p>
-               </div>
-            </div>
-         </div>
+		<section class="flex h-full flex-col mb-[5%]">
+			<div class="flex h-full w-full">
+				<div id="static-left-div" class="flex w-1/2 h-auto" style="background-color: white">
+					<div id="rectangle-section"></div>
+				</div>
+				<div class="flex lg: w-1/2 w-full">
+					<div class="flex w-1/4"></div>
+					<div class="flex-col lg: w-1/2 w-full h-full" style="background-color: transparent">
+						<div class="lg:flex flex-col lg:my-[50%] my-[10%] updateContent">
+							<div class="feature-image-content flex-1">
+								<img src="assets/featureImage1.png" alt="" />
+							</div>
+							<div class="flex-1">
+								<div class="border-red-500 border-l-4">
+									<h1 class="text-2xl md:text-4xl lg:text-4xl font-bold ml-4 mb-4">Take Off <span class="text-red-500">Faster</span></h1>
+									<p class="text-md lg:text-r-2xl ml-4 mt-2 lg:max-w-screen-lg">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt. Nunc auctor,
+										mauris at gravida vestibulum, elit nunc laoreet odio, sit amet sagittis dolor eros a neque.
+									</p>
+								</div>
+							</div>
+						</div>
 
-         <div class="md:flex max-w-screen-2xl mx-auto pt-4">
-            <div class="md:w-[60%] delay-[300ms] duration-[600ms] taos:[transform:translate3d(-200px,0,0)_scale(0.6)] taos:opacity-0" data-taos-offset="400">
-               <img src="assets/features1.png" alt="" />
-            </div>
-            <div class="md:w-[40%] flex flex-col justify-center items-center delay-[300ms] duration-[600ms] taos:[transform:translate3d(200px,0,0)_scale(0.6)] taos:opacity-0" data-taos-offset="400">
-               <div class="border-red-500 border-r-4 pl-20 btext-right pr-4 lg:pr-8 text-right">
-                  <h1 class="text-2xl md:text-4xl lg:text-4xl font-bold mb-4">Eyes <span class="text-red-500">Everywhere</span></h1>
-                  <p class="text-md lg:text-r-2xl mt-2 lg:max-w-screen-lg">
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt. Nunc auctor, mauris at
-                     gravida vestibulum, elit nunc laoreet odio, sit amet sagittis dolor eros a neque.
-                  </p>
-               </div>
-            </div>
-         </div>
+						<div class="lg:flex flex-col lg:my-[50%] my-[10%] updateContent">
+							<div class="feature-image-content flex-1">
+								<img src="assets/featureImage2.png" alt="" />
+							</div>
+							<div class="flex-1">
+								<div class="border-red-500 border-l-4 pr-20 lg:pl-8">
+									<h1 class="text-2xl md:text-4xl lg:text-4xl font-bold ml-4 mb-4">Eyes <span class="text-red-500">Everywhere</span></h1>
+									<p class="text-md lg:text-r-2xl ml-4 mt-2 lg:max-w-screen-lg">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt. Nunc auctor,
+										mauris at gravida vestibulum, elit nunc laoreet odio, sit amet sagittis dolor eros a neque.
+									</p>
+								</div>
+							</div>
+						</div>
 
-         <div class="md:flex max-w-screen-2xl mx-auto md:flex-row-reverse">
-            <div class="md:w-[60%] delay-[300ms] duration-[600ms] taos:translate-x-[100%] taos:invisible" data-taos-offset="400">
-               <img src="assets/features1.png" alt="" />
-            </div>
-            <div class="md:w-[40%] flex flex-col justify-center items-center delay-[300ms] duration-[600ms] taos:translate-x-[-100%] taos:invisible" data-taos-offset="400">
-               <div class="border-red-500 border-l-4 pr-20 lg:pl-8">
-                  <h1 class="text-2xl md:text-4xl lg:text-4xl font-bold ml-4 mb-4">Get Your <span class="text-red-500">Agents </span>on their A-Game</h1>
-                  <p class="text-md lg:text-r-2xl ml-4 mt-2 lg:max-w-screen-lg">
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt. Nunc auctor, mauris at
-                     gravida vestibulum, elit nunc laoreet odio, sit amet sagittis dolor eros a neque.
-                  </p>
-               </div>
-            </div>
-         </div>
+						<div class="lg:flex flex-col lg:my-[50%] my-[10%] updateContent">
+							<div class="feature-image-content flex-1">
+								<img src="assets/featureImage3.png" alt="" />
+							</div>
+							<div class="flex-1">
+								<div class="border-red-500 border-l-4 pr-20 lg:pl-8">
+									<h1 class="text-2xl md:text-4xl lg:text-4xl font-bold ml-4 mb-4">Get Your <span class="text-red-500">Agents </span>on their A-Game</h1>
+									<p class="text-md lg:text-r-2xl ml-4 mt-2 lg:max-w-screen-lg">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt. Nunc auctor,
+										mauris at gravida vestibulum, elit nunc laoreet odio, sit amet sagittis dolor eros a neque.
+									</p>
+								</div>
+							</div>
+						</div>
 
-         <div class="md:flex max-w-screen-2xl mx-auto pt-4">
-            <div class="md:w-[60%] delay-[300ms] duration-[600ms] taos:translate-x-[-200px] taos:opacity-0" data-taos-offset="400">
-               <img src="assets/features1.png" alt="" />
-            </div>
-            <div class="md:w-[40%] flex flex-col justify-center items-center delay-[300ms] duration-[600ms] taos:translate-x-[200px] taos:opacity-0" data-taos-offset="400">
-               <div class="border-red-500 border-r-4 pl-20 btext-right pr-4 lg:pr-8 text-right">
-                  <h1 class="text-2xl md:text-4xl lg:text-4xl font-bold mb-4"><span class="text-red-500">Adapting </span>to you, Effortlessly</h1>
-                  <p class="text-md lg:text-r-2xl mt-2 lg:max-w-screen-lg">
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt. Nunc auctor, mauris at
-                     gravida vestibulum, elit nunc laoreet odio, sit amet sagittis dolor eros a neque.
-                  </p>
+						<div class="lg:flex flex-col lg:mt-[50%] my-[10%] updateContent">
+							<div class="feature-image-content flex-1">
+								<img src="assets/featureImage4.png" alt="" />
+							</div>
+							<div class="flex-1">
+								<div class="border-red-500 border-l-4 pr-20 lg:pl-8">
+									<h1 class="text-2xl md:text-4xl lg:text-4xl font-bold ml-4 mb-4">Adapting <span class="text-red-500"> </span>to you, Effortlessly</h1>
+									<p class="text-md lg:text-r-2xl ml-4 mt-2 lg:max-w-screen-lg">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec massa quis lacus hendrerit scelerisque. Nulla facilisi. Fusce vel justo in justo posuere tincidunt. Nunc auctor,
+										mauris at gravida vestibulum, elit nunc laoreet odio, sit amet sagittis dolor eros a neque.
+									</p>
+								</div>
+							</div>
+						</div>
                </div>
-            </div>
-         </div>
-      </section>
+					<div class="flex w-1/4"></div>
+			</div>
+
+		</section>
 
       <section class="bg-bg4 h-[350px] w-full border">
          <div class="max-w-screen-2xl mx-auto px-10 flex flex flex-col text-center text-white lg:my-16">
@@ -352,116 +363,116 @@
                      </div>
                   </div>
 
-                  <div class="flex flex-col justify-between bg-white p-10 border border-red-300 shadow-xl rounded-lg xl:px-10 relative">
-                     <span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-100 rounded-full px-3 text-red-500 font-bold text-sm">Most Popular</span>
-                     <div>
-                        <div class="">
-                           <h1 class="text-center text-lg">Pro</h1>
-                           <h1 class="text-center text-5xl font-bold">&#8377; <span id="range-price-pro">999</span></h1>
-                           <h1 class="text-center text-gray-400 font-light">Per month, billed annually</h1>
-                        </div>
-                        <div class="mt-8">
-                           <div class="">
-                              <input type="range" id="range-input-pro" value="5" min="0" max="100" step="5" class="w-full appearance-none range-slider bg-gray-200 rounded-full thumb:bg-amber-500 overflow-hidden" />
-                           </div>
-                           <h1 class="text-center text-md font-bold mt-2">Number of users: <span id="range-value-pro"></span></h1>
-                        </div>
-                        <div class="mt-8">
-                           <p class="my-4">All features in Standard, plus:</p>
-                           <ul class="space-y-3">
-                              <li class="flex gap-3">
-                                 <img src="assets/check.svg" alt="check" class="h-5 w-5" />
-                                 <p>Lorem ipsum dolor sit amet</p>
-                              </li>
-                              <li class="flex gap-3">
-                                 <img src="assets/check.svg" alt="check" class="h-5 w-5" />
-                                 <p>Lorem ipsum dolor sit amet</p>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="flex justify-center">
-                        <button class="rounded-lg p-2 px-6 bg-red-500 text-lg shadow-md border font-bold text-white my-4">Get Started</button>
-                     </div>
-                  </div>
+						<div class="flex flex-col justify-between bg-white p-10 border border-red-300 shadow-xl rounded-lg xl:px-10 relative">
+							<span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-100 rounded-full px-3 text-red-500 font-bold text-sm">Most Popular</span>
+							<div>
+								<div class="">
+									<h1 class="text-center text-lg">Pro</h1>
+									<h1 class="text-center text-5xl font-bold">&#8377; <span id="range-price-pro">999</span></h1>
+									<h1 class="text-center text-gray-400 font-light">Per month, billed annually</h1>
+								</div>
+								<div class="mt-8">
+									<div class="">
+										<input type="range" id="range-input-pro" value="5" min="0" max="100" step="5" class="w-full appearance-none range-slider bg-gray-200 rounded-full thumb:bg-amber-500 overflow-hidden" />
+									</div>
+									<h1 class="text-center text-md font-bold mt-2">Number of users: <span id="range-value-pro"></span></h1>
+								</div>
+								<div class="mt-8">
+									<p class="my-4">All features in Standard, plus:</p>
+									<ul class="space-y-3">
+										<li class="flex gap-3">
+											<img src="assets/check.svg" alt="check" class="h-5 w-5" />
+											<p>Lorem ipsum dolor sit amet</p>
+										</li>
+										<li class="flex gap-3">
+											<img src="assets/check.svg" alt="check" class="h-5 w-5" />
+											<p>Lorem ipsum dolor sit amet</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="flex justify-center">
+								<button class="rounded-lg p-2 px-6 bg-red-500 text-lg shadow-md border font-bold text-white my-4">Get Started</button>
+							</div>
+						</div>
 
-                  <div class="flex flex-col justify-between bg-white p-10 border border-gray-300 shadow-xl rounded-lg">
-                     <div>
-                        <div class="">
-                           <h1 class="text-center text-lg">Premium</h1>
-                           <h1 class="text-center text-5xl font-bold">&#8377; <span id="range-price-premium">1099</span></h1>
-                           <h1 class="text-center text-gray-400 font-light">Per month, billed annually</h1>
-                        </div>
-                        <div class="mt-8">
-                           <div class="">
-                              <input type="range" id="range-input-premium" value="5" min="0" max="100" step="5" class="w-full appearance-none range-slider bg-gray-200 rounded-full thumb:bg-amber-500 overflow-hidden" />
-                           </div>
-                           <h1 class="text-center text-md font-bold mt-2">Number of users: <span id="range-value-premium"></span></h1>
-                        </div>
-                        <div class="mt-8">
-                           <p class="my-4">All features in Pro, plus:</p>
-                           <ul class="space-y-3">
-                              <li class="flex gap-3">
-                                 <img src="assets/check.svg" alt="check" class="h-5 w-5" />
-                                 <p>Lorem ipsum dolor sit amet</p>
-                              </li>
-                              <li class="flex gap-3">
-                                 <img src="assets/check.svg" alt="check" class="h-5 w-5" />
-                                 <p>Lorem ipsum dolor sit amet</p>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="flex justify-center">
-                        <button class="rounded-lg p-2 px-6 bg-red-500 text-lg shadow-md border font-bold text-white my-4">Get Started</button>
-                     </div>
-                  </div>
+						<div class="flex flex-col justify-between bg-white p-10 border border-gray-300 shadow-xl rounded-lg">
+							<div>
+								<div class="">
+									<h1 class="text-center text-lg">Premium</h1>
+									<h1 class="text-center text-5xl font-bold">&#8377; <span id="range-price-premium">1099</span></h1>
+									<h1 class="text-center text-gray-400 font-light">Per month, billed annually</h1>
+								</div>
+								<div class="mt-8">
+									<div class="">
+										<input type="range" id="range-input-premium" value="5" min="0" max="100" step="5" class="w-full appearance-none range-slider bg-gray-200 rounded-full thumb:bg-amber-500 overflow-hidden" />
+									</div>
+									<h1 class="text-center text-md font-bold mt-2">Number of users: <span id="range-value-premium"></span></h1>
+								</div>
+								<div class="mt-8">
+									<p class="my-4">All features in Pro, plus:</p>
+									<ul class="space-y-3">
+										<li class="flex gap-3">
+											<img src="assets/check.svg" alt="check" class="h-5 w-5" />
+											<p>Lorem ipsum dolor sit amet</p>
+										</li>
+										<li class="flex gap-3">
+											<img src="assets/check.svg" alt="check" class="h-5 w-5" />
+											<p>Lorem ipsum dolor sit amet</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="flex justify-center">
+								<button class="rounded-lg p-2 px-6 bg-red-500 text-lg shadow-md border font-bold text-white my-4">Get Started</button>
+							</div>
+						</div>
 
-                  <div class="flex flex-col justify-between bg-white p-10 border border-gray-300 shadow-xl rounded-lg">
-                     <div>
-                        <div class="">
-                           <h1 class="text-center text-lg">Premium Plus</h1>
-                           <h1 class="text-center text-5xl font-bold">&#8377; <span id="range-price-premium-plus">1299</span></h1>
-                           <h1 class="text-center text-gray-400 font-light">Per month, billed annually</h1>
-                        </div>
-                        <div class="mt-8">
-                           <div class="">
-                              <input
-                                 type="range"
-                                 id="range-input-premium-plus"
-                                 value="5"
-                                 min="0"
-                                 max="100"
-                                 step="5"
-                                 class="w-full appearance-none range-slider bg-gray-200 rounded-full thumb:bg-amber-500 overflow-hidden"
-                              />
-                           </div>
-                           <h1 class="text-center text-md font-bold mt-2">Number of users: <span id="range-value-premium-plus"></span></h1>
-                        </div>
-                        <div class="mt-8">
-                           <p class="my-4">All features in Premium, plus:</p>
-                           <ul class="space-y-3">
-                              <li class="flex gap-3">
-                                 <img src="assets/check.svg" alt="check" class="h-5 w-5" />
-                                 <p>Lorem ipsum dolor sit amet</p>
-                              </li>
-                              <li class="flex gap-3">
-                                 <img src="assets/check.svg" alt="check" class="h-5 w-5" />
-                                 <p>Lorem ipsum dolor sit amet</p>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="flex justify-center">
-                        <button class="rounded-lg p-2 px-6 bg-red-500 text-lg shadow-md border font-bold text-white my-4">Get Started</button>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="flex justify-center">
-               <button class="mb-4 md:mb-10 rounded-lg p-2 px-6 bg-white text-sm md:text-lg shadow-md border font-bold text-red-500 border border-gray-200">Learn More</button>
-            </div>
-         </section>
+						<div class="flex flex-col justify-between bg-white p-10 border border-gray-300 shadow-xl rounded-lg">
+							<div>
+								<div class="">
+									<h1 class="text-center text-lg">Premium Plus</h1>
+									<h1 class="text-center text-5xl font-bold">&#8377; <span id="range-price-premium-plus">1299</span></h1>
+									<h1 class="text-center text-gray-400 font-light">Per month, billed annually</h1>
+								</div>
+								<div class="mt-8">
+									<div class="">
+										<input
+											type="range"
+											id="range-input-premium-plus"
+											value="5"
+											min="0"
+											max="100"
+											step="5"
+											class="w-full appearance-none range-slider bg-gray-200 rounded-full thumb:bg-amber-500 overflow-hidden"
+										/>
+									</div>
+									<h1 class="text-center text-md font-bold mt-2">Number of users: <span id="range-value-premium-plus"></span></h1>
+								</div>
+								<div class="mt-8">
+									<p class="my-4">All features in Premium, plus:</p>
+									<ul class="space-y-3">
+										<li class="flex gap-3">
+											<img src="assets/check.svg" alt="check" class="h-5 w-5" />
+											<p>Lorem ipsum dolor sit amet</p>
+										</li>
+										<li class="flex gap-3">
+											<img src="assets/check.svg" alt="check" class="h-5 w-5" />
+											<p>Lorem ipsum dolor sit amet</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="flex justify-center">
+								<button class="rounded-lg p-2 px-6 bg-red-500 text-lg shadow-md border font-bold text-white my-4">Get Started</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex justify-center">
+					<button class="mb-4 md:mb-10 rounded-lg p-2 px-6 bg-white text-sm md:text-lg shadow-md border font-bold text-red-500 border border-gray-200">Learn More</button>
+				</div>
+			</section>
 
          <section class="bg-gray-800">
             <div class="max-w-screen-2xl mx-auto text-white p-2 lg:p-0">
@@ -560,63 +571,63 @@
       <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
    </body>
 
-   <script>
-      const thumbnail = document.getElementById("thumbnail");
-      const videoModal = document.getElementById("videoModal");
-      const closeButton = document.getElementById("closeButton");
+	<script>
+		const thumbnail = document.getElementById("thumbnail");
+		const videoModal = document.getElementById("videoModal");
+		const closeButton = document.getElementById("closeButton");
 
-      thumbnail.addEventListener("click", () => {
-         document.getElementById("demo-video").play();
-         videoModal.classList.remove("hidden");
-      });
+		thumbnail.addEventListener("click", () => {
+			document.getElementById("demo-video").play();
+			videoModal.classList.remove("hidden");
+		});
 
-      closeButton.addEventListener("click", () => {
-         document.getElementById("demo-video").pause();
-         videoModal.classList.add("hidden");
-      });
+		closeButton.addEventListener("click", () => {
+			document.getElementById("demo-video").pause();
+			videoModal.classList.add("hidden");
+		});
 
-      const proRangeValue = document.getElementById("range-input-pro");
-      const standardRangeValue = document.getElementById("range-input-standard");
-      const premiumRangeValue = document.getElementById("range-input-premium");
-      const premiumPlusRangeValue = document.getElementById("range-input-premium-plus");
+		const proRangeValue = document.getElementById("range-input-pro");
+		const standardRangeValue = document.getElementById("range-input-standard");
+		const premiumRangeValue = document.getElementById("range-input-premium");
+		const premiumPlusRangeValue = document.getElementById("range-input-premium-plus");
 
-      document.getElementById("range-value-pro").innerText = proRangeValue.value;
-      document.getElementById("range-value-standard").innerText = standardRangeValue.value;
-      document.getElementById("range-value-premium").innerText = premiumRangeValue.value;
-      document.getElementById("range-value-premium-plus").innerText = premiumPlusRangeValue.value;
-      proRangeValue.addEventListener("input", () => {
-         const defaultPrice = 999; // for g users
-         const rangePrice = (defaultPrice * proRangeValue.value) / 100;
-         const rangeCount = (20 * proRangeValue.value) / 100;
-         const discountPrice = rangeCount > 1 ? (defaultPrice * rangeCount - rangePrice).toFixed(0) : rangeCount ? defaultPrice : 0;
-         document.getElementById("range-value-pro").innerText = proRangeValue.value;
-         document.getElementById("range-price-pro").innerText = discountPrice;
-      });
-      standardRangeValue.addEventListener("input", () => {
-         const defaultPrice = 899; // for g users
-         const rangePrice = (defaultPrice * standardRangeValue.value) / 100;
-         const rangeCount = (20 * standardRangeValue.value) / 100;
-         const discountPrice = rangeCount > 1 ? (defaultPrice * rangeCount - rangePrice).toFixed(0) : rangeCount ? defaultPrice : 0;
-         document.getElementById("range-value-standard").innerText = standardRangeValue.value;
-         document.getElementById("range-price-standard").innerText = discountPrice;
-      });
-      premiumRangeValue.addEventListener("input", () => {
-         const defaultPrice = 1099; // for g users
-         const rangePrice = (defaultPrice * premiumRangeValue.value) / 100;
-         const rangeCount = (20 * premiumRangeValue.value) / 100;
-         const discountPrice = rangeCount > 1 ? (defaultPrice * rangeCount - rangePrice).toFixed(0) : rangeCount ? defaultPrice : 0;
-         document.getElementById("range-value-premium").innerText = premiumRangeValue.value;
-         document.getElementById("range-price-premium").innerText = discountPrice;
-      });
-      premiumPlusRangeValue.addEventListener("input", () => {
-         const defaultPrice = 1299; // for g users
-         const rangePrice = (defaultPrice * premiumPlusRangeValue.value) / 100;
-         const rangeCount = (20 * premiumPlusRangeValue.value) / 100;
-         const discountPrice = rangeCount > 1 ? (defaultPrice * rangeCount - rangePrice).toFixed(0) : rangeCount ? defaultPrice : 0;
-         document.getElementById("range-value-premium-plus").innerText = premiumPlusRangeValue.value;
-         document.getElementById("range-price-premium-plus").innerText = discountPrice;
-      });
-   </script>
+		document.getElementById("range-value-pro").innerText = proRangeValue.value;
+		document.getElementById("range-value-standard").innerText = standardRangeValue.value;
+		document.getElementById("range-value-premium").innerText = premiumRangeValue.value;
+		document.getElementById("range-value-premium-plus").innerText = premiumPlusRangeValue.value;
+		proRangeValue.addEventListener("input", () => {
+			const defaultPrice = 999; // for g users
+			const rangePrice = (defaultPrice * proRangeValue.value) / 100;
+			const rangeCount = (20 * proRangeValue.value) / 100;
+			const discountPrice = rangeCount > 1 ? (defaultPrice * rangeCount - rangePrice).toFixed(0) : rangeCount ? defaultPrice : 0;
+			document.getElementById("range-value-pro").innerText = proRangeValue.value;
+			document.getElementById("range-price-pro").innerText = discountPrice;
+		});
+		standardRangeValue.addEventListener("input", () => {
+			const defaultPrice = 899; // for g users
+			const rangePrice = (defaultPrice * standardRangeValue.value) / 100;
+			const rangeCount = (20 * standardRangeValue.value) / 100;
+			const discountPrice = rangeCount > 1 ? (defaultPrice * rangeCount - rangePrice).toFixed(0) : rangeCount ? defaultPrice : 0;
+			document.getElementById("range-value-standard").innerText = standardRangeValue.value;
+			document.getElementById("range-price-standard").innerText = discountPrice;
+		});
+		premiumRangeValue.addEventListener("input", () => {
+			const defaultPrice = 1099; // for g users
+			const rangePrice = (defaultPrice * premiumRangeValue.value) / 100;
+			const rangeCount = (20 * premiumRangeValue.value) / 100;
+			const discountPrice = rangeCount > 1 ? (defaultPrice * rangeCount - rangePrice).toFixed(0) : rangeCount ? defaultPrice : 0;
+			document.getElementById("range-value-premium").innerText = premiumRangeValue.value;
+			document.getElementById("range-price-premium").innerText = discountPrice;
+		});
+		premiumPlusRangeValue.addEventListener("input", () => {
+			const defaultPrice = 1299; // for g users
+			const rangePrice = (defaultPrice * premiumPlusRangeValue.value) / 100;
+			const rangeCount = (20 * premiumPlusRangeValue.value) / 100;
+			const discountPrice = rangeCount > 1 ? (defaultPrice * rangeCount - rangePrice).toFixed(0) : rangeCount ? defaultPrice : 0;
+			document.getElementById("range-value-premium-plus").innerText = premiumPlusRangeValue.value;
+			document.getElementById("range-price-premium-plus").innerText = discountPrice;
+		});
+	</script>
 
    <script>
       const navbar = document.getElementById("navbar");
@@ -650,23 +661,119 @@
             isSmall = false;
          }
 
-         const image = document.getElementById("tilt-image");
-         const container = document.querySelector(".image-container");
-         const scrollY = window.scrollY;
-         const maxTilt = 45;
+			const image = document.getElementById("tilt-image");
+			const container = document.querySelector(".image-container");
+			const scrollY = window.scrollY;
+			const maxTilt = 45;
 
-         const tiltAngle = (scrollY / container.clientHeight) * maxTilt * 3;
-         tiltAngleCal = Math.max(0, Math.min(maxTilt, tiltAngle));
-         image.style.transform = `rotateX(${45 - tiltAngleCal}deg)`;
+			const tiltAngle = (scrollY / container.clientHeight) * maxTilt * 3;
+			tiltAngleCal = Math.max(0, Math.min(maxTilt, tiltAngle));
+			image.style.transform = `rotateX(${45 - tiltAngleCal}deg)`;
 
-         if (tiltAngleCal == 45) document.getElementById("thumbnail").style.display = "block";
-         else document.getElementById("thumbnail").style.display = "none";
-      });
+			if (tiltAngleCal == 45) document.getElementById("thumbnail").style.display = "block";
+			else document.getElementById("thumbnail").style.display = "none";
+		});
 
-      // handleLandingPage()" id="discover-page"
-      function handleLandingPage() {
-         const selected = document.getElementById("discover-page").value;
-         window.location.href = `/${selected}.html`;
-      }
-   </script>
+		// handleLandingPage()" id="discover-page"
+		function handleLandingPage() {
+			const selected = document.getElementById("discover-page").value;
+			window.location.href = `/${selected}.html`;
+		}
+	</script>
+	<style>
+
+		#rectangle-section {
+			position: absolute;
+			top: 250px;
+			left: 25%;
+			width: 100%;
+			background-color: transparent;
+		}
+
+		#static-left-div {
+			position: relative;
+		}
+
+		.feature-image-content {
+			display: block;
+		}
+
+		#static-left-div {
+			display: none;
+		}
+
+		@media (min-width: 1024px) {
+			.feature-image-content {
+				display: none;
+			}
+			#static-left-div {
+				display: flex;
+			}
+		}
+	</style>
+
+	<script>
+		const transparentDiv = document.getElementById("rectangle-section");
+		const section = document.getElementById("static-left-div");
+		const stickyDivs = document.querySelectorAll(".feature-image-content");
+		let currentDivIndex = 0;
+
+		window.addEventListener("scroll", () => {
+			const scrollY = window.scrollY;
+			// Calculate the maximum top position of the transparent div within the section
+			const maxTop = section.offsetTop + section.clientHeight - transparentDiv.clientHeight;
+
+			if (scrollY + 250 >= maxTop) {
+				// Stick the transparent div to the bottom of the section
+				transparentDiv.style.top = maxTop - section.offsetTop + "px";
+			} else if (scrollY >= section.offsetTop) {
+				updateContent();
+				// Stick the transparent div to the top of the section
+				transparentDiv.style.top = scrollY - section.offsetTop + 250 + "px";
+			} else {
+				// Reset the position of the transparent div
+				transparentDiv.style.top = "250px";
+			}
+		});
+
+		const animateElements = document.querySelectorAll(".updateContent");
+		const rectangleSection = document.getElementById("rectangle-section");
+		const updateFlags = Array(animateElements.length).fill(false);
+		let previousUpdateFlags = [...updateFlags];
+		let currentElement = "";
+
+		function arraysHaveChanged(arr1, arr2) {
+			for (let i = 0; i < arr1.length; i++) {
+				if (arr1[i] !== arr2[i]) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+		function updateContent() {
+			animateElements.forEach((element, index) => {
+				const elementRect = element.getBoundingClientRect();
+				const elementTop = elementRect.top;
+				const viewportHeight = window.innerHeight;
+				if (elementTop <= viewportHeight && !updateFlags[index]) {
+					currentElement = element;
+					updateFlags[index] = true;
+
+					for (let i = 0; i < updateFlags.length; i++) {
+						if (i !== index) {
+							updateFlags[i] = false;
+						}
+					}
+				}
+			});
+
+			if (arraysHaveChanged(updateFlags, previousUpdateFlags)) {
+				rectangleSection.innerHTML = currentElement.querySelector(".feature-image-content").innerHTML;
+				previousUpdateFlags = [...updateFlags];
+			}
+		}
+
+		rectangleSection.innerHTML = animateElements[0].querySelector(".feature-image-content").innerHTML;
+	</script>
 </html>
